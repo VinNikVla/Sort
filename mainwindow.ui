@@ -104,7 +104,23 @@
        </layout>
       </item>
       <item>
+       <layout class="QVBoxLayout" name="verticalLayout_2"/>
+      </item>
+      <item>
+       <widget class="QLabel" name="labelTimeIteration">
+        <property name="text">
+         <string>Время итерации, мс</string>
+        </property>
+       </widget>
+      </item>
+      <item>
        <widget class="QSlider" name="sliderTimeItreation">
+        <property name="sizePolicy">
+         <sizepolicy hsizetype="Minimum" vsizetype="Fixed">
+          <horstretch>0</horstretch>
+          <verstretch>0</verstretch>
+         </sizepolicy>
+        </property>
         <property name="orientation">
          <enum>Qt::Horizontal</enum>
         </property>

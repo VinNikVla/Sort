@@ -6,7 +6,7 @@ MainWindow::MainWindow(QWidget *parent) :
     ui(new Ui::MainWindow)
 {
     ui->setupUi(this);
-    QObject::connect(ui->timeItration, SIGNAL(valueChanged(int)), ui->pool, SLOT(setTimeIteration(int)));
+    //QObject::connect(ui->timeItration, SIGNAL(valueChanged(int)), ui->pool, SLOT(setTimeIteration(int)));
     QObject::connect(ui->buttonBegin, SIGNAL(pressed()), ui->pool, SLOT(slotNewGame()));
     QObject::connect(ui->buttonClose, SIGNAL(clicked()), this, SLOT(close()));
     QObject::connect(ui->numberDiscrets, SIGNAL(valueChanged(int)), ui->pool, SLOT(setNumberDiscrets(int)));
@@ -22,6 +22,11 @@ MainWindow::MainWindow(QWidget *parent) :
 
     QObject::connect(ui->buttonPause, SIGNAL(clicked()), ui->pool, SLOT(setPausa()));
         ui->buttonPause->setCheckable(true);
+        ui->labelTimeIteration->setAlignment(Qt::AlignCenter);
+        ui->sliderTimeItreation->setTickPosition(QSlider::TicksBothSides);
+        ui->sliderTimeItreation->setTickInterval(10);
+        ui->sliderTimeItreation->setRange(1, 1000);
+    QObject::connect(ui->sliderTimeItreation, SIGNAL(valueChanged(int)), ui->pool, SLOT(setTimeIteration(int)));
 
 
 }
